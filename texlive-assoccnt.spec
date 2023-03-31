@@ -1,6 +1,6 @@
 Name:		texlive-assoccnt
 Version:	38497
-Release:	1
+Release:	2
 Summary:	Associate counters, making them step when a master steps
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/assoccnt
