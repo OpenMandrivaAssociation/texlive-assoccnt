@@ -3,7 +3,7 @@ Version:	38497
 Release:	2
 Summary:	Associate counters, making them step when a master steps
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/assoccnt
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/assoccnt
 License:	lppl1.3
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/assoccnt.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/assoccnt.doc.r%{version}.tar.xz
