@@ -1,36 +1,23 @@
-Name:		texlive-assoccnt
-Version:	38497
-Release:	2
+%global tl_name assoccnt
+%global tl_revision 38497
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	0.8
+Release:	%{tl_revision}.1
 Summary:	Associate counters, making them step when a master steps
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/assoccnt
 License:	lppl1.3
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/assoccnt.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/assoccnt.doc.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/assoccnt.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/assoccnt.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+%texlive_base_requires
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-The package provides the means of declaring a set of counters
-to be stepped, each time some 'master' counter is stepped.
+The package provides the means of declaring a set of counters to be
+stepped, each time some 'master' counter is stepped.
 
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%{_texmfdistdir}/tex/latex/assoccnt
-%doc %{_texmfdistdir}/doc/latex/assoccnt
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
